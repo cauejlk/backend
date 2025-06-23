@@ -9,7 +9,8 @@ from .models import (
    Servicos,
    Reserva_Servicos,
    Turno,
-   Tipo_quarto
+   Tipo_quarto,
+   Pagamento
 )
 
 
@@ -22,4 +23,4 @@ admin.site.register(Funcionarios)
 admin.site.register(Reserva)
 admin.site.register(Servicos)
 admin.site.register(Reserva_Servicos)
-
+admin.site.register(Pagamento)
