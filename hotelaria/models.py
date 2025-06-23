@@ -100,3 +100,12 @@ class Reserva_Servicos(models.Model):
 
     def __str__(self):
         return f'Serviço {self.cod_servico.nome_servico} na Reserva {self.cod_reserva.cod_reserva}'
+
+class Pagamento(models.Model):
+    cod_pagamento = models.AutoField(primary_key=True)
+    cod_reserva = models.ForeignKey(Reserva, on_delete=models.PROTECT)
+    pagamento_final = models.DecimalField(max_digits=10, decimal_places=2)
+    pagamento_inicial = models.DecimalField(max_digits=10, decimal_places=2)
+    desconto = models.DecimalField(max_digits=10, decimal_places=2)
+    efetuado = models.CharField(max_length=10)
+    metodo_pagamento = models.CharField(max_length=15)
